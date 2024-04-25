@@ -1,11 +1,19 @@
 import sys
 
-if len(sys.argv) > 1:
-	arg = sys.argv[1]
+if len(sys.argv) == 1:
+	print("Arguments are missing. Please add a book and a character to count")
+	exit()
+
+elif len(sys.argv) == 2:
+	path_to_book = sys.argv[1]
+	arg = False
+elif len(sys.argv) == 3:
+	path_to_book = sys.argv[1]
+	arg = sys.argv[2]
 else: 
 	arg = False
 
-with open('books/frankenstein.txt') as f:
+with open(path_to_book) as f:
 	
 
 	file_contents = f.read()
